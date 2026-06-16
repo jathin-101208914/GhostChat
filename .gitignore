@@ -1,0 +1,13 @@
+# Backend
+ghostchat/target/
+
+# Frontend
+ghostchat-frontend/node_modules/
+ghostchat-frontend/dist/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
