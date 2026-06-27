@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: ghostchat-backend
+    runtime: java
+    rootDir: ghostchat
+
+    buildCommand: ./mvnw clean package -DskipTests
+
+    startCommand: java -jar target/ghostchat-0.0.1-SNAPSHOT.jar
+
+    plan: free
+
+    envVars:
+      - key: DB_URL
+        sync: false
+
+      - key: DB_USERNAME
+        sync: false
+
+      - key: DB_PASSWORD
+        sync: false
+
+      - key: JWT_SECRET
+        sync: false
+
+      - key: REDIS_URL
+        sync: false
+
+      - key: FRONTEND_URL
+        sync: false
