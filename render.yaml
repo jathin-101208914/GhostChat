@@ -2,6 +2,7 @@ services:
   - type: web
     name: ghostchat-backend
     runtime: java
+
     rootDir: ghostchat
 
     buildCommand: ./mvnw clean package -DskipTests
@@ -23,7 +24,13 @@ services:
       - key: JWT_SECRET
         sync: false
 
-      - key: REDIS_URL
+      - key: REDIS_HOST
+        sync: false
+
+      - key: REDIS_PORT
+        sync: false
+
+      - key: REDIS_PASSWORD
         sync: false
 
       - key: FRONTEND_URL
