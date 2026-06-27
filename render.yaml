@@ -1,7 +1,7 @@
 services:
   - type: web
     name: ghostchat-backend
-    runtime: java
+    env: java
 
     rootDir: ghostchat
 
