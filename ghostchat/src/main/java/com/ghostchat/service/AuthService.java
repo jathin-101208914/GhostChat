@@ -7,8 +7,11 @@ import com.ghostchat.entity.User;
 import com.ghostchat.repository.UserRepository;
 import com.ghostchat.util.JwtUtil;
 import lombok.RequiredArgsConstructor;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -16,6 +19,8 @@ public class AuthService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtUtil jwtUtil;
+    private final SessionService sessionService;
+    private final SimpMessagingTemplate messagingTemplate;
 
     public String register(RegisterRequest request){
         if(userRepository.existsByEmail(request.getEmail())){
@@ -43,17 +48,23 @@ public class AuthService {
                 .orElse(null);
 
         if(user == null){
-            return new LoginResponse(" User not found");
+            return new LoginResponse(null, null, null);
         }
 
         boolean matches = passwordEncoder.matches(request.getPassword(), user.getPassword());
 
         if(!matches){
-            return new LoginResponse("Invalid password");
+            return new LoginResponse(null, null, null);
         }
 
-        String token = jwtUtil.generateToken(user.getEmail());
+        messagingTemplate.convertAndSend("/topic/logout" + user.getEmail(), "LOGOUT");
 
-        return new LoginResponse(token);
+        String sessionId = UUID.randomUUID().toString();
+
+        String token = jwtUtil.generateToken(user.getEmail(), sessionId);
+
+        sessionService.saveSession(user.getEmail(), sessionId);
+
+        return new LoginResponse(token, user.getUsername(), user.getEmail());
     }
 }
