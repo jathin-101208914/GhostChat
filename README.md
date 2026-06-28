@@ -57,40 +57,37 @@ A secure, real-time ephemeral chat application where messages automatically disa
 
 ## Login
 
-![Login](screenshots/login.png)
+![Login](screenshots/Login.png)
 
 ---
 
 ## Register
 
-![Register](screenshots/register.png)
+![Register](screenshots/Register.png)
 
 ---
 
 ## Room Dashboard
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](screenshots/Dashboard.png)
 
 ---
 
 ## Chat Room
 
-![Chat](screenshots/chat.png)
+![Chat](screenshots/Chat.png)
 
 ---
 
 ## Anonymous Mode
 
-![Anonymous](screenshots/anonymous.png)
+![Anonymous](screenshots/Anonymous.png)
 
 ---
 
-## Invite Link
+## Chatting
 
-![Invite](screenshots/invite.png)
-
----
-
+![Chatting](screenshots/Chatting.png)
 ## ⚙️ Running Locally
 
 ### Backend
@@ -132,6 +129,3 @@ http://localhost:8080
 - 👥 Group chats
 - 😊 Emoji reactions
 - 📸 Image sharing
-
---
-
