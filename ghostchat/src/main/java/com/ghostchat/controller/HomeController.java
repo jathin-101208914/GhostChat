@@ -8,6 +8,6 @@ public class HomeController {
 
     @GetMapping("/")
     public String home(){
-        return "GhostChat backend is running";
+        return "GhostChat backend is Running";
     }
 }
