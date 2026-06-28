@@ -83,6 +83,13 @@ function ChatPage() {
         const socket = new SockJS(`${API_URL}/chat`);
 
         const stompClient = new Client({
+            onWebSocketError: (e) => {
+                    console.log("WebSocket Error", e);
+                },
+
+                onStompError: (frame) => {
+                    console.log("STOMP Error", frame);
+                },
             webSocketFactory: () => socket,
          
             onConnect: async () => {
