@@ -32,6 +32,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/rooms/validate/**").permitAll()
                         .requestMatchers("/chat/**").permitAll()
                         .requestMatchers("/redis-test/**").permitAll()
+                        .requestMatchers("/").permitAll()
                         .anyRequest().authenticated()
                 )
 
