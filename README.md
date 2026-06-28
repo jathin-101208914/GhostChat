@@ -8,6 +8,8 @@ A secure, real-time ephemeral chat application where messages automatically disa
 
 **Backend API:** https://ghostchat-f3sq.onrender.com
 
+**Note:** The backend is hosted on Render's free tier. If the application has been inactive for some time, the first request may take **30–60 seconds** while the server wakes up. After that, the application responds normally.
+
 ---
 
 ## 💡 About
