@@ -74,6 +74,6 @@ public class WebSocketDisconnectListener {
         messagingTemplate.convertAndSend("/topic/room/" + roomCode, message);
         sessionService.removeSession(sessionId);
 
-        System.out.println("DISCNNECTED -> " + username);
+//        System.out.println("DISCNNECTED -> " + username);
     }
 }

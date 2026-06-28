@@ -14,10 +14,10 @@ public class MessageExpiryService {
     private final MessageService messageService;
 
     public void expireMessage(ChatMessage message){
-        CompletableFuture.delayedExecutor(30, TimeUnit.SECONDS).execute(() -> {
+        CompletableFuture.delayedExecutor(15, TimeUnit.MINUTES).execute(() -> {
             messageService.deleteMessage(message);
 
-            System.out.println("MESSAGE EXPIRED -> " + message.getContent());
+//            System.out.println("MESSAGE EXPIRED -> " + message.getContent());
         });
     }
 }

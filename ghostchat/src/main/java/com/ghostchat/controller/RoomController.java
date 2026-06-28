@@ -43,7 +43,7 @@ public class RoomController {
 
     @PostMapping("/leave")
     public String leaveRoom(@RequestBody LeaveRoomRequest request){
-        System.out.println("LEAVE API HIT -> " + request.getUsername());
+//        System.out.println("LEAVE API HIT -> " + request.getUsername());
         return roomService.leaveRoom(request.getRoomCode(), request.getUsername());
     }
 

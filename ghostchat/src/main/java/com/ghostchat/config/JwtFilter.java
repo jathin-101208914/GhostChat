@@ -49,7 +49,7 @@ public class JwtFilter extends OncePerRequestFilter {
             return;
         }
 
-        System.out.println("Authenticated User: " + email);
+//        System.out.println("Authenticated User: " + email);
 
         UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(email, null, Collections.emptyList());
 

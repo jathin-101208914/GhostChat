@@ -98,7 +98,7 @@ function ChatPage() {
 
                         setMessages(prev => [...prev, received]);
 
-                        const expiryTime = received.type === "SYSTEM" ? 2000 : 5000;
+                        const expiryTime = received.type === "SYSTEM" ? 2000 : 15 * 60 *1000;
 
                         setTimeout(() => {
                             setMessages(prev => prev.filter(m => m.id !== received.id));
@@ -114,7 +114,7 @@ function ChatPage() {
 
                             setTimeout(() => {
                                 setTypingUser("");
-                            }, 1000);
+                            }, 2000);
                         }
                     }
                 );
@@ -241,27 +241,6 @@ function ChatPage() {
             loadMessages();
         }, [roomCode]);
 
-    // useEffect(() => {
-    //     const fetchUsers = async () => {
-
-    //         try{
-    //             const endpoint = isAnonymousRoom ? `http://localhost:8080/api/rooms/${roomCode}/anonymous-users` : `http://localhost:8080/api/rooms/${roomCode}/users`;
-    //             const response = await fetch(endpoint);
-    //             const users = await response.json();
-
-    //             setOnlineUsers(users);
-    //         }catch(error){
-    //             console.error(error);
-    //         }
-            
-    //     };
-
-    //     fetchUsers();
-
-    //     const interval = setInterval(fetchUsers, 2000);
-
-    //     return () => clearInterval(interval);
-    // }, [roomCode, isAnonymousRoom]);
     useEffect(() => {
         const fetchUsers = async () => {
             const endpoint = isAnonymousRoom

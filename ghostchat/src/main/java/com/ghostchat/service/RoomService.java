@@ -27,7 +27,7 @@ public class RoomService {
         rooms.put(roomCode, ConcurrentHashMap.newKeySet());
 
         anonymousRooms.put(roomCode, anonymousMode);
-        System.out.println("ROOM CREATED -> " + roomCode + " Anonymous: " + anonymousMode);
+//        System.out.println("ROOM CREATED -> " + roomCode + " Anonymous: " + anonymousMode);
 
 //        System.out.println("ROOM CREATED: " + roomCode);
 //        System.out.println("ROOMS: " + rooms);
@@ -42,9 +42,9 @@ public class RoomService {
 
 //        System.out.println("USER JOINED: " + username);
 //        System.out.println("ROOMS: " + rooms);
-        System.out.println(
-                "REDIS JOIN -> " + username + " ROOM=" + roomCode
-        );
+//        System.out.println(
+//                "REDIS JOIN -> " + username + " ROOM=" + roomCode
+//        );
         return username + " joined room " + roomCode;
     }
 
@@ -63,11 +63,11 @@ public class RoomService {
             redisService.deleteRoom(roomCode);
             anonymousRooms.remove(roomCode);
 
-            System.out.println("DELETING ROOM -> " + roomCode);
+//            System.out.println("DELETING ROOM -> " + roomCode);
             messageService.deleteRoomMessages(roomCode);
 //            System.out.println("ROOM DESTROYED: " + roomCode);
 //            System.out.println("ROOMS: " + rooms);
-            System.out.println("MESSAGES DELETED -> " + roomCode);
+//            System.out.println("MESSAGES DELETED -> " + roomCode);
 
             return "Room Destroyed";
         }

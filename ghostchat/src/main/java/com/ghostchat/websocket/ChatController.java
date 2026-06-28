@@ -41,12 +41,12 @@ public class ChatController {
         messageExpiryService.expireMessage(message);
 
         messagingTemplate.convertAndSend("/topic/room/" + message.getRoomCode(), message);
-        System.out.println(
-                "ROOM " +
-                        message.getRoomCode() +
-                        " Anonymous = " +
-                        roomService.isAnonymousRoom(message.getRoomCode())
-        );
+//        System.out.println(
+//                "ROOM " +
+//                        message.getRoomCode() +
+//                        " Anonymous = " +
+//                        roomService.isAnonymousRoom(message.getRoomCode())
+//        );
     }
 
     @MessageMapping("/chat.typing")
