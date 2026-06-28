@@ -21,7 +21,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     ) {
 
         registry.addEndpoint("/chat")
-                .setAllowedOrigins("http://localhost:5173", "https://ghostchat-frontend.onrender.com")
+                .setAllowedOrigins("http://localhost:5173", "https://ghostchat-frontend.onrender.com", "https://ghost-chat-indol.vercel.app/")
                 .withSockJS();
     }
 }
