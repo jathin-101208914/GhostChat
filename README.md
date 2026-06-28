@@ -10,6 +10,22 @@ A secure, real-time ephemeral chat application where messages automatically disa
 
 ---
 
+## 💡 About
+
+GhostChat is a full-stack real-time messaging application inspired by ephemeral messaging platforms. It demonstrates secure authentication, WebSocket communication, Redis integration, and automatic message expiration using a modern Spring Boot + React architecture.
+
+The project was built to showcase production-ready backend development concepts including JWT authentication, REST APIs, WebSockets, Redis caching, MySQL persistence, and cloud deployment.
+
+## 🎮 How to Use
+
+1. Create an account or log in.
+2. Create a private room or join using an invite link.
+3. (Optional) Enable Anonymous Mode before creating a room.
+4. Share the invite link with another user.
+5. Exchange messages in real time.
+6. Messages automatically disappear after the configured expiration time.
+7. Leave the room when you're finished.
+
 ## ✨ Features
 
 - 🔐 JWT Authentication
